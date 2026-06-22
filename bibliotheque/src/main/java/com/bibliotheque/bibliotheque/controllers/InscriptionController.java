@@ -1,6 +1,7 @@
 package com.bibliotheque.bibliotheque.controllers;
 
 import com.bibliotheque.bibliotheque.dtos.InscriptionRequest;
+import com.bibliotheque.bibliotheque.services.InscriptionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class InscriptionController {
 
-    private final InscriptionController inscriptionService;
+    private final InscriptionService inscriptionService;
 
     @PostMapping("/inscription")
     public ResponseEntity<String> inscription(@RequestBody InscriptionRequest inscriptionRequest){
-        inscriptionService.inscription(inscriptionRequest);
+        inscriptionService.inscrire(inscriptionRequest);
         return ResponseEntity.ok("inscription reussie avec succes!!");
 
 
